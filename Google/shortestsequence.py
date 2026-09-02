@@ -1,83 +1,43 @@
-#     Given a array of bytes (c++ string or char array or unit_8 array).
+"""Find the shortest string over a fixed alphabet that is not a substring.
+
+Question:
+    Given an input string and an alphabet, return a shortest sequence that does
+    not occur contiguously in the input. Ties are resolved lexicographically.
+
+The breadth-first search enumerates candidates by increasing length.
+
+Time complexity: O(A^L * (N + L)) in the worst case, where A is the alphabet
+size, N is the input length, and L is the answer length.
+Space complexity: O(A^L * L) for the BFS queue.
+"""
+
+from collections import deque
 
 
-# Please find a shortest byte sequence that does not present in the input array.
+def find_shortest_seq_not_present(s: str, alphabet: str = "abcdef") -> str:
+    """Return the shortest lexicographically first missing substring."""
+    if not alphabet:
+        raise ValueError("alphabet must not be empty")
+
+    queue = deque(alphabet)
+    while queue:
+        candidate = queue.popleft()
+        if candidate not in s:
+            return candidate
+        for character in alphabet:
+            queue.append(candidate + character)
+
+    raise RuntimeError("unreachable for a finite input string")
 
 
-# assume that "byte" contains only "a" to "f"
-# input: "abcdefacbeddefd"
+def _run_tests() -> None:
+    assert find_shortest_seq_not_present("aabcdf") == "e"
+    assert find_shortest_seq_not_present("abcdefacbeddefd") == "aa"
+    # "ab" is present across the "aa"/"bb" boundary; "ad" is first missing.
+    assert find_shortest_seq_not_present("abcdefacbeddefdaabbccddeeff") == "ad"
+    assert find_shortest_seq_not_present("", "01") == "0"
 
 
-# "a" is present
-# "b" is present
-# ..
-# "f" is present
-# "aa" is not present
-# "ab" is present
-# "ac" is present
-
-
-# you can return "aa" or "ad" or "ae"... "ff"
-# but not "ab" "ac" "bc"
-
-
-# testcases
-# input - aabcdf
-# output - e
-# Check for single byte shortest byte sequence a,b,c, .... f
-
-
-# input - abcdefacbeddefd
-# output - aa
-# check for aa, ab, ac, .... ff
-
-
-# input - abcdefacbeddefdaabbccddeeff
-# output - ab
-
-
-# input contains arbitrary bytes ('\x00' to '\xff'), not only letters
-# small testcase: input length <= 16MB
-# large testcase: input length <= 4GB
-
-
-# you have 8GB ram
-
-
-# How to solve this problem?
-    class TrieNode:
-        def __init__(self, val):
-            self.val = val
-            self.child = {}
-            isWord = False
-
-    class Trie:
-        def __init__(self):
-            self.root = TrieNode(None)
-
-        def addWord(self, word):
-            root = self.root
-            for c in word :
-                if c not in root.child:
-                    root.child[c] = TrieNode(c)
-                root = root.child[c]
-            root.isWord = True
-
-    def find_shortest_seq_not_present(s):
-        trie = Trie()
-        for i in range(len(s)):
-            trie.addWord(s[i:])
-
-        root = trie.root
-        q = deque()
-        q.append((root, ""))
-        while(q) :
-            root, string = q.popleft()
-            temp = "abcdef"
-            for c in temp:
-                if c not in root.child:
-                    return string + c
-                else :
-                    q.append(root.child[c], string + c)
-
-        return ""
+if __name__ == "__main__":
+    _run_tests()
+    print("All tests passed.")

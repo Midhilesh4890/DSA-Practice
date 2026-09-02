@@ -1,3 +1,19 @@
+"""Find the minimum edge-cut cost that disconnects all tree leaves.
+
+Question:
+    Find the minimum edge-cut cost that disconnects all tree leaves.
+
+Approach:
+    Tree dynamic programming chooses cutting a parent edge or cutting below it.
+
+Complexity:
+    O(N) time and O(H) recursion space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 def solve_min_cut(root, edges):
     from collections import defaultdict
     

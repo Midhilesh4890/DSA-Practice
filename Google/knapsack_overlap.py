@@ -1,3 +1,19 @@
+"""Select words for maximum score under concatenated-length overlap.
+
+Question:
+    Select words for maximum score under concatenated-length overlap.
+
+Approach:
+    Compute suffix/prefix overlaps and enumerate word subsets/orders within the limit.
+
+Complexity:
+    Exponential worst-case time and O(N) recursion space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 def compute_z_function(s):
     """Computes the Z-function for a given string s."""
     n = len(s)

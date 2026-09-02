@@ -1,3 +1,19 @@
+"""Count dictionary words of length at least three that are subsequences.
+
+Question:
+    Count dictionary words of length at least three that are subsequences.
+
+Approach:
+    Bucket partially matched words by their next required character.
+
+Complexity:
+    O(|S| + total word characters) time and space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 
 # given a string s and a list of strings st.
 

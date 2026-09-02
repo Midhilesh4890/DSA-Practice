@@ -1,3 +1,19 @@
+"""Determine whether a ray to a target is blocked by any segment.
+
+Question:
+    Determine whether a ray to a target is blocked by any segment.
+
+Approach:
+    Convert segment endpoints and the target to angular intervals around the origin.
+
+Complexity:
+    O(S log S) time and O(S) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 import math
 
 def angle_from_origin(x, y):

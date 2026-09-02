@@ -1,3 +1,19 @@
+"""Enumerate two-state partitions having equal vote power.
+
+Question:
+    Enumerate two-state partitions having equal vote power.
+
+Approach:
+    Backtrack subset sums to half the total with suffix-sum pruning.
+
+Complexity:
+    O(2^N) time plus output and O(N) recursion space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # https://leetcode.com/discuss/interview-question/6082922/Google-online-interview-question
 
 # You are given a list of vote power and states

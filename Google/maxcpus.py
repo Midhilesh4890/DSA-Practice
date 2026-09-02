@@ -1,3 +1,19 @@
+"""Check whether interval jobs fit within a CPU capacity.
+
+Question:
+    Check whether interval jobs fit within a CPU capacity.
+
+Approach:
+    Sweep sorted start/end events while tracking concurrent demand.
+
+Complexity:
+    O(N log N) time and O(N) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # Given a set of jobs array and max number of cpus, where each job object contains 3 props {starttime,duration,numberofCpusNeeded}, write a function which returns true if the jobs can be executed with the given max cpus else return false even if one job can't be executed?
 from collections import defaultdict
 

@@ -1,3 +1,19 @@
+"""Find minimum knight moves while avoiding blocked squares.
+
+Question:
+    Find minimum knight moves while avoiding blocked squares.
+
+Approach:
+    Breadth-first search the board using the eight knight offsets.
+
+Complexity:
+    O(R*C) time and O(R*C) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # Same as leetcode 1031 but here the size is infinite
 # https://leetcode.com/problems/escape-a-large-maze/solutions/282849/python-bfs-and-dfs-the-whole-problem-is-broken/
 

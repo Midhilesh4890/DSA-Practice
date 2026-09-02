@@ -1,3 +1,19 @@
+"""Choose a cafe minimizing total distance from all friends.
+
+Question:
+    Choose a cafe minimizing total distance from all friends.
+
+Approach:
+    Run BFS from each friend and sum distances at candidate cafes.
+
+Complexity:
+    O(F*(V+E)) time and O(V) auxiliary space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 from collections import deque, defaultdict
 import math
 

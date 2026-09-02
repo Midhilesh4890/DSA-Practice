@@ -1,3 +1,19 @@
+"""Shuffle songs without replaying any of the previous K songs.
+
+Question:
+    Shuffle songs without replaying any of the previous K songs.
+
+Approach:
+    Track the recent queue and sample until selecting an eligible song.
+
+Complexity:
+    Expected O(1/(1-K/N)) per play and O(K) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 import collections
 import random
 class Shuffler:

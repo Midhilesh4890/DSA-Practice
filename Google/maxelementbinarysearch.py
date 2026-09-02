@@ -1,3 +1,19 @@
+"""Find the span/count of the maximum value in sorted data.
+
+Question:
+    Find the span/count of the maximum value in sorted data.
+
+Approach:
+    Locate left and right boundaries with binary search.
+
+Complexity:
+    O(log N) time and O(1) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # Given an sorted array, find the maximum frequency of a number.
 # Eg: [1,2,2,3,3,3,3,4,4,5,6] : Answer: 4 (3 is repeated 4 times).
 

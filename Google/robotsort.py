@@ -1,3 +1,19 @@
+"""Find minimum robot moves to order boxes using one empty slot.
+
+Question:
+    Find minimum robot moves to order boxes using one empty slot.
+
+Approach:
+    Model arrangements as states and search legal empty-slot swaps.
+
+Complexity:
+    Exponential worst-case time and space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # Robot sort:
 # You have boxes in magazine and a single empty spot (at the end) like:
 

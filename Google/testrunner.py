@@ -1,3 +1,19 @@
+"""Find a pair of unit tests that fails only when run together.
+
+Question:
+    Find a pair of unit tests that fails only when run together.
+
+Approach:
+    Narrow a failing subset, then pair one isolated suspect with other tests.
+
+Complexity:
+    O(N log N) runner work under the stated linear runner cost and O(N) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # There is a testRunner funtion that takes multiple unit test and returns if those uts are executed together & then there is some error or not. If no error then return true other wise false. You have been given N unit tests, and you know that when you run all test cases at a time then it fails. Now you need to find at least one pair of UTs, which fails when executed at the same time using the test runner.
 
 # Its easy when we assume that the testRunner takes O(1) to execute any number of test cases. But for the case when the test runner takes O(n) time to execute n test cases at a time then find the optimal way to find one pair of failed UTs.

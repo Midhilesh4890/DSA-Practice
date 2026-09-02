@@ -1,3 +1,19 @@
+"""Group duplicate elements connected by shared properties.
+
+Question:
+    Group duplicate elements connected by shared properties.
+
+Approach:
+    Map properties to indices and union transitive duplicates.
+
+Complexity:
+    O(P*alpha(N)) time and O(N+P) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # You're given a list of elements. Each element has a unique id and 3 properties. Two elements are considered as duplicates if they share any
 # of the 3 properties. Please write a function that takes the input and returns all the duplicates.
 

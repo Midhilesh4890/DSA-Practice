@@ -1,57 +1,57 @@
+"""Assign the minimum number of cars to non-overlapping reservations.
+
+Question:
+    Each reservation is a half-open interval ``[start, end)``. Assign a car to
+    every reservation so that overlapping reservations use different cars and
+    return both the per-car schedule and the assignment in input order.
+
+The algorithm processes reservations by start time. One heap tracks busy cars
+by end time and another tracks reusable car identifiers.
+
+Time complexity: O(N log N). Space complexity: O(N).
+"""
+
 import heapq
 
 
 def assign_cars(reservations):
-    sorted_reservations = sorted(enumerate(reservations), key=lambda x: x[1][0])
+    """Return ``(schedules, assignments)`` using the fewest possible cars."""
+    ordered = sorted(enumerate(reservations), key=lambda item: item[1])
+    busy = []  # (end_time, car_id)
+    available = []  # reusable car IDs
+    assignments = [0] * len(reservations)
+    schedules = {}
 
-    # Tracks available cars (min heap of end times)
-    available_cars = []
+    for original_index, (start, end) in ordered:
+        if end < start:
+            raise ValueError("a reservation cannot end before it starts")
 
-    car_assignments = [0] * len(reservations)
+        while busy and busy[0][0] <= start:
+            _, car_id = heapq.heappop(busy)
+            heapq.heappush(available, car_id)
 
-    # Tracks total number of unique cars used
-    max_cars = 0
-
-    for original_index, (start, end) in sorted_reservations:
-        # Remove cars that are now available before the current reservation
-        while available_cars and available_cars[0][0] <= start:
-            # Heappop the end time and push back the car number to reuse
-            _, car_num = heapq.heappop(available_cars)
-            car_assignments[original_index] = car_num
-            car_assigned = True
-            break
+        if available:
+            car_id = heapq.heappop(available)
         else:
-            # If no available cars, create a new car
-            car_assigned = False
+            car_id = len(schedules)
+            schedules[car_id] = []
 
-        if not car_assigned:
-            # Assign a new car
-            car_num = max_cars
-            max_cars += 1
-            car_assignments[original_index] = car_num
+        assignments[original_index] = car_id
+        schedules[car_id].append((start, end))
+        heapq.heappush(busy, (end, car_id))
 
-        # Add this reservation's end time to the heap
-        heapq.heappush(available_cars, (end, car_assignments[original_index]))
-
-    return car_assignments
+    return schedules, assignments
 
 
-def main():
-    reservations = [
-        [1, 4],
-        [10, 12],
-        [2, 5],
-        [5, 8],
-        [3, 6],
-        [7, 9],
-    ]
-
-    car_assignments = assign_cars(reservations)
-
-    print("Reservations:", reservations)
-    print("Car Assignments:", car_assignments)
-    print("Minimum number of cars needed:", len(set(car_assignments)))
+def _run_tests() -> None:
+    schedules, assignments = assign_cars([(1, 4), (10, 12), (2, 5), (5, 8)])
+    assert len(schedules) == 2
+    assert assignments[0] != assignments[2]
+    assert assignments[1] in schedules
+    assert assign_cars([]) == ({}, [])
+    assert len(assign_cars([(1, 2), (2, 3), (3, 4)])[0]) == 1
 
 
 if __name__ == "__main__":
-    main()
+    _run_tests()
+    print("All tests passed.")

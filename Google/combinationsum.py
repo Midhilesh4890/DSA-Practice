@@ -1,3 +1,19 @@
+"""Determine whether a subset sums to the array maximum.
+
+Question:
+    Determine whether a subset sums to the array maximum.
+
+Approach:
+    Remove one maximum and use subset-sum DP or meet-in-the-middle sums.
+
+Complexity:
+    O(N*M) time/O(M) space for DP; O(2^(N/2)) time and space for MITM.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # Given an array, return true or false.
 
 # Condition:
@@ -11,12 +27,16 @@
 
 # Answer: True.
 def can_sum_to_max(arr):
+    arr = list(arr)  # Do not mutate the caller's input.
     n = len(arr)
     if n < 2:
         return False
     
     target = max(arr)
-    arr.remove(max_element)  # Exclude the max element
+    arr.remove(target)  # Exclude one occurrence of the maximum element.
+
+    if target < 0 or any(number < 0 for number in arr):
+        raise ValueError("the dynamic-programming solution requires non-negative integers")
     
     # Using dynamic programming to check if a subset sum equals target
     dp = [False] * (target + 1)
@@ -42,6 +62,7 @@ def get_all_sums(arr):
     return sums
 
 def can_sum_to_max_meet_middle(arr):
+    arr = list(arr)  # Do not mutate the caller's input.
     if len(arr) < 2:
         return False
 

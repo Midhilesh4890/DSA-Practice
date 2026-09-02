@@ -1,3 +1,19 @@
+"""Find the fewest one-character changes between valid strings.
+
+Question:
+    Find the fewest one-character changes between valid strings.
+
+Approach:
+    Breadth-first search the implicit graph of strings with unequal adjacent letters.
+
+Complexity:
+    O(3^N*N) worst-case time and space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 from collections import deque
 
 def neighbors(s):

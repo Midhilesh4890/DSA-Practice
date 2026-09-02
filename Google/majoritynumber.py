@@ -1,3 +1,19 @@
+"""Find the most frequent character and its occurrence boundaries.
+
+Question:
+    Find the most frequent character and its occurrence boundaries.
+
+Approach:
+    Count frequencies and binary-search boundary positions in the ordered string.
+
+Complexity:
+    O(N) time and O(1) alphabet space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 def find_most_frequent_letter(s):
     def find_boundary(s, ch, left=True):
         lo, hi = 0, len(s) - 1

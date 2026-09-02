@@ -1,3 +1,19 @@
+"""Remove non-engineers from an employee tree while promoting their children.
+
+Question:
+    Remove non-engineers from an employee tree while promoting their children.
+
+Approach:
+    Traverse breadth-first and splice each removed node's children into its parent.
+
+Complexity:
+    O(N) time and O(N) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 from collections import deque
 
 class Employee:

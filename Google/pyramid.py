@@ -1,3 +1,19 @@
+"""Solve sliding-window median and pyramid feasibility variants.
+
+Question:
+    Solve sliding-window median and pyramid feasibility variants.
+
+Approach:
+    Two heaps maintain medians; binary search checks feasible pyramid height.
+
+Complexity:
+    O(N log K) for medians and O(N log M) for feasibility; O(N) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 from heapq import *
 from collections import Counter
 def medianSlidingWindow(nums, k):

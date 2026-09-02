@@ -1,3 +1,19 @@
+"""Choose the graph node minimizing total distance to all friends.
+
+Question:
+    Choose the graph node minimizing total distance to all friends.
+
+Approach:
+    Run Dijkstra from every friend and sum shortest-path distances.
+
+Complexity:
+    O(F*(V+E) log V) time and O(V+E) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # Round 1:
 # Question: There are n friends living in different cities across a graph. Find the shortest distance between two friends (e.g., A and B).
 # Solution: Solved using BFS (Dijkstra's algorithm).

@@ -1,3 +1,19 @@
+"""Find the minimum refueling stops needed to reach a destination.
+
+Question:
+    Find the minimum refueling stops needed to reach a destination.
+
+Approach:
+    Sweep stations and greedily take the largest previously passed fuel supply.
+
+Complexity:
+    O(N log N) time and O(N) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 import heapq
 
 def minRefuelStops(distance, tank, stations):

@@ -1,3 +1,19 @@
+"""Count cross-array triples satisfying distance bounds.
+
+Question:
+    Count cross-array triples satisfying distance bounds.
+
+Approach:
+    Advance monotonic window pointers in sorted arrays and multiply valid counts.
+
+Complexity:
+    O(A+B+C) time after sorting and O(1) auxiliary space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # You are given three sorted arrays A, B, and C, each of size n, and an integer D. The task is to count the number of unique tuples (i, j, k) where:
 
 

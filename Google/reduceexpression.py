@@ -1,3 +1,19 @@
+"""Simplify a symbolic addition/subtraction expression.
+
+Question:
+    Simplify a symbolic addition/subtraction expression.
+
+Approach:
+    Tokenize signs and parentheses, combine numeric terms, and preserve symbols.
+
+Complexity:
+    O(N) time and O(N) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # Calculator to reduce expression
 # a + a * 4 - b + c + 3 * b
 

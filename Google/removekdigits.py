@@ -1,3 +1,19 @@
+"""Remove K digits/elements to form the maximum remaining subsequence.
+
+Question:
+    Remove K digits/elements to form the maximum remaining subsequence.
+
+Approach:
+    A monotonic stack discards smaller earlier elements while removals remain.
+
+Complexity:
+    O(N) time and O(N) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # https://leetcode.com/problems/remove-k-digits/description/
 # but google asked for n - k
 

@@ -1,3 +1,19 @@
+"""Count subsets whose least common multiple is divisible by K.
+
+Question:
+    Count subsets whose least common multiple is divisible by K.
+
+Approach:
+    Backtrack over include/exclude choices while maintaining the current LCM.
+
+Complexity:
+    O(2^N*log K) time and O(N) recursion space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # Find the total number of subsets of an array such that the LCM of elements in each subset is divisible by k.
 
 

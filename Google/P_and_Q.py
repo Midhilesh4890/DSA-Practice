@@ -1,3 +1,19 @@
+"""Determine whether string P can be transformed into string Q.
+
+Question:
+    Determine whether string P can be transformed into string Q.
+
+Approach:
+    Validate transformation invariants with linear scanning; BFS is retained for comparison.
+
+Complexity:
+    O(N) optimized time and O(1) auxiliary space; BFS is exponential.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # Recently I came across a google interview question. The question is as follows:
 
 

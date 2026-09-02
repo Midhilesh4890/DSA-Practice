@@ -1,3 +1,19 @@
+"""Choose a meeting vertex minimizing edges used from sources to D.
+
+Question:
+    Choose a meeting vertex minimizing edges used from sources to D.
+
+Approach:
+    BFS distance maps from each source and destination score every vertex.
+
+Complexity:
+    O(K*(V+E)) time and O(K*V) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # Given an undirected graph, Alice and Bob are standing somewhere (node index is given), They want to reach a common destination D such that the number of unique edges they traverse is as minimum as possible. (Most hops should be common.!)
 # Another way of writing this question 
 # Q: A and B wants to reach some destination in an undirected graph using the least number of unique edges.

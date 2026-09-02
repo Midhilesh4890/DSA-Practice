@@ -1,3 +1,19 @@
+"""Rewrite a list from matching values found within a K-sized window.
+
+Question:
+    Rewrite a list from matching values found within a K-sized window.
+
+Approach:
+    Maintain a sliding lookup of eligible values and modify matches in place.
+
+Complexity:
+    O(N*K) worst-case time and O(K) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # K window of a list = distinct elements in the first K elements
 # Given 2 lists, modify list2 such that the k windows of the 2 lists don't have any common element. Return the new list (Asked to optimize the space multiple times).
 

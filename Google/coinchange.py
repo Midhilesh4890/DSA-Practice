@@ -1,3 +1,19 @@
+"""Recover coin denominations from a coin-change DP table.
+
+Question:
+    Recover coin denominations from a coin-change DP table.
+
+Approach:
+    Repeatedly identify the first positive coefficient and subtract its contribution.
+
+Complexity:
+    O(C*T) time and O(T) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # coinchane but reverse we will be given dp but we need to find coins
 def recover_coins(dp, target):
     coins = []

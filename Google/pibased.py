@@ -1,3 +1,19 @@
+"""Find positions whose following digits match the prefix of pi.
+
+Question:
+    Find positions whose following digits match the prefix of pi.
+
+Approach:
+    Compare each candidate position with the supplied pi digit string.
+
+Complexity:
+    O(N*P) time and O(1) auxiliary space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 def findMatchingIndices(pi: str) -> list[int]:
     """
     Find indices i where pi[i-len(str(i)):i] equals str(i).

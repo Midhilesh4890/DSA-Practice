@@ -1,3 +1,17 @@
+"""Determine whether a word can occupy a complete row or column slot.
+
+Question:
+    Place a word contiguously in a crossword-like grid. Walls are ``#``, spaces
+    are writable, existing letters must match, and the word must fill its slot.
+
+Approach:
+    Scan horizontal and vertical wall-delimited slots and use wildcard-aware
+    string matching for candidate placements.
+
+Complexity:
+    O(R*C + (R+C)*L) time and O(R+C+L) auxiliary space.
+"""
+
 # def can_place_string(matrix, s):
 #     """
 #     Return True if string s can be placed in matrix according to the rules:

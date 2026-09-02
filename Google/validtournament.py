@@ -1,3 +1,19 @@
+"""Validate whether a seeded knockout ordering follows pairing rules.
+
+Question:
+    Validate whether a seeded knockout ordering follows pairing rules.
+
+Approach:
+    Simulate rounds in a queue and check complementary seeds.
+
+Complexity:
+    O(N) time and O(N) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 from collections import deque
 
 def is_valid(nums):

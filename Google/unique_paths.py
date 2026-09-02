@@ -1,3 +1,19 @@
+"""Count rightward grid paths with optional ordered checkpoints.
+
+Question:
+    Count rightward grid paths with optional ordered checkpoints.
+
+Approach:
+    Column dynamic programming counts paths; checkpoint variants compose segments/states.
+
+Complexity:
+    O(N*M*C) time and O(N*M*C) space in the general checkpoint variant.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # Initial Question: You are given an n×m grid and start from the bottom-left corner with the goal of reaching the bottom-right corner. The allowed moves are only to the right, diagonally up-right, and diagonally down-right. The task is to determine the total number of unique paths that can lead you from the starting point to the destination while adhering to these movement rules.
 
 

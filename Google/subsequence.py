@@ -1,3 +1,19 @@
+"""Find a subsequence start while allowing at most one substitution.
+
+Question:
+    Find a subsequence start while allowing at most one substitution.
+
+Approach:
+    Try matching from each viable start with two forward pointers.
+
+Complexity:
+    O(N^2) time and O(1) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 def find_subsequence_index(A, B):
     n = len(A)
     m = len(B)

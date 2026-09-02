@@ -1,3 +1,19 @@
+"""Count distinct connected-component sizes in a binary tree representation.
+
+Question:
+    Count distinct connected-component sizes in a binary tree representation.
+
+Approach:
+    Breadth-first traversals visit nodes and collect component sizes.
+
+Complexity:
+    O(N) time and O(N) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 from collections import deque
 
 class TreeNode:

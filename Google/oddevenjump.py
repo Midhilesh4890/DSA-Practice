@@ -1,3 +1,14 @@
+"""Count starting positions that reach the end using odd/even jump rules.
+
+Question: Count indices from which alternating next-higher and next-lower jumps
+can reach the final array index.
+
+Sorted-value monotonic-stack passes find the next higher and lower indices;
+backward dynamic programming marks reachable states.
+
+Complexity: O(N log N) time and O(N) space.
+"""
+
 # Array Jumping
 
 
@@ -18,8 +29,10 @@
 # Answer: [14,15]
 
 class Solution:
-    def oddEvenJumps(self, A: List[int]) -> int:
+    def oddEvenJumps(self, A) -> int:
         n = len(A)
+        if n == 0:
+            return 0
         next_higher, next_lower = [0] * n, [0] * n
 
         stack = []
@@ -40,3 +53,15 @@ class Solution:
             higher[i] = lower[next_higher[i]]
             lower[i] = higher[next_lower[i]]
         return sum(higher)
+
+
+def _run_tests():
+    solution = Solution()
+    assert solution.oddEvenJumps([10, 13, 12, 14, 15]) == 2
+    assert solution.oddEvenJumps([2, 3, 1, 1, 4]) == 3
+    assert solution.oddEvenJumps([]) == 0
+
+
+if __name__ == "__main__":
+    _run_tests()
+    print("All tests passed.")

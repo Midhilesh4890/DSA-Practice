@@ -1,3 +1,19 @@
+"""Validate the syntax of a simple symbolic equation.
+
+Question:
+    Validate the syntax of a simple symbolic equation.
+
+Approach:
+    Split around one equals sign and validate tokens, operators, and parentheses.
+
+Complexity:
+    O(N) time and O(N) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 import re
 
 def validate_equation(equation):

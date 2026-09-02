@@ -1,9 +1,24 @@
-from sortedcontainers import SortedList
+"""Count triples of substrings with matching character-parity masks.
+
+Question:
+    Count triples of substrings with matching character-parity masks.
+
+Approach:
+    Encode letter parity as bitmasks and count compatible occurrences.
+
+Complexity:
+    O(N^2) time and O(N^2) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 from itertools import pairwise
 
 def calculate_unique_masks(s):
     last_seen = {}  # Track the last position of each character
-    sorted_chars = SortedList()  # Ordered list of characters based on last seen position
+    sorted_chars = []  # Ordered (negative last-position, character) pairs.
     result_masks = []
 
     for idx, char in enumerate(s):
@@ -11,7 +26,8 @@ def calculate_unique_masks(s):
         if char in last_seen:
             sorted_chars.remove((-last_seen[char], char))
         last_seen[char] = idx
-        sorted_chars.add((-idx, char))
+        sorted_chars.append((-idx, char))
+        sorted_chars.sort()
 
         # Generate masks and counts for unique characters up to the current position
         masks_counts = []

@@ -1,3 +1,19 @@
+"""Simulate power propagation through a three-dimensional node graph.
+
+Question:
+    Simulate power propagation through a three-dimensional node graph.
+
+Approach:
+    Breadth-first propagation updates reachable nodes through supplied edges.
+
+Complexity:
+    O(V+E) time and O(V) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # https://chatgpt.com/share/67afb042-66d8-800d-823a-c91becb81e5d
 
 # given a lattice kinda graph where each node is either a torch node that has power 16 or wire node where value is 0,

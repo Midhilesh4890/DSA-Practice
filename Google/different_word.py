@@ -1,3 +1,19 @@
+"""Check whether one string is formed by inserting exactly one character.
+
+Question:
+    Check whether one string is formed by inserting exactly one character.
+
+Approach:
+    Use two pointers and allow one skipped character in the longer string.
+
+Complexity:
+    O(N) time and O(1) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 def only_differs_by_insertion(s1, s2):
     # Split both strings into lists of words
     words1 = s1.split()

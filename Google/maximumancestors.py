@@ -1,3 +1,19 @@
+"""For every tree leaf, report the maximum-valued ancestor.
+
+Question:
+    For every tree leaf, report the maximum-valued ancestor.
+
+Approach:
+    Depth-first search carries the maximum value along each root-to-leaf path.
+
+Complexity:
+    O(N) time and O(H) recursion space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val

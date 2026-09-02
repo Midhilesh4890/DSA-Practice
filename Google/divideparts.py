@@ -1,3 +1,19 @@
+"""Partition a sequence into fixed parts and maximize a threshold score.
+
+Question:
+    Partition a sequence into fixed parts and maximize a threshold score.
+
+Approach:
+    Memoized dynamic programming tries every next cut position.
+
+Complexity:
+    O(P*N^2) time and O(P*N) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # You are given a sequence of positive integers sequence. Your goal is to divide this sequence into parts non-empty contiguous subsequences. Among these partssubsequences, the number of subsequences whose sum of elements is at least threshold will be called the score. Find the maximum score.
 
 

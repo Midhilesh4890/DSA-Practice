@@ -1,3 +1,19 @@
+"""Check whether wireless routers connect source to destination.
+
+Question:
+    Check whether wireless routers connect source to destination.
+
+Approach:
+    Build implicit range edges and breadth-first search reachable routers.
+
+Complexity:
+    O(N^2) time and O(N) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # given the name of source and destination router, max rannge of all routers and a map of router name and coordinates, return boolean indicatin wheter a signal sent from source can reach destination.
 from collections import deque
 from typing import Dict, Tuple

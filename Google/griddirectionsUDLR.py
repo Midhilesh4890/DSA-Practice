@@ -1,3 +1,19 @@
+"""Find a single move sequence that synchronizes walkers on a grid.
+
+Question:
+    Find a single move sequence that synchronizes walkers on a grid.
+
+Approach:
+    Breadth-first search sets of possible positions after each global move.
+
+Complexity:
+    O(2^(R*C)*R*C) worst-case time and space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # Question:
 # You are given a matrix of 0s, 1s, and 2s, where 0 means an empty cell, 1 means a wall, and 2 means an exit. There will always be an exit. Generate a sequence of instructions (U, D, L, R) such that no matter where you start in the matrix, you always reach the exit.
 # Example:

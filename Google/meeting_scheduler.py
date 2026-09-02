@@ -1,3 +1,19 @@
+"""Schedule meetings while excluding do-not-schedule intervals.
+
+Question:
+    Schedule meetings while excluding do-not-schedule intervals.
+
+Approach:
+    Merge blocked intervals and greedily keep compatible meetings.
+
+Complexity:
+    O((M+D) log(M+D)) time and O(M+D) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 def schedule_meetings(meetings, dns):
     """
     Given a list of meeting intervals and one DNS interval,

@@ -1,3 +1,19 @@
+"""Remove all original leaves from an N-ary tree.
+
+Question:
+    Remove all original leaves from an N-ary tree.
+
+Approach:
+    Recursively filter each node's child list.
+
+Complexity:
+    O(N) time and O(H) recursion space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 class Node:
     def __init__(self, value):
         self.value = value

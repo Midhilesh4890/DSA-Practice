@@ -1,3 +1,19 @@
+"""Map an IP address to the country containing its numeric range.
+
+Question:
+    Map an IP address to the country containing its numeric range.
+
+Approach:
+    Convert IPs to integers and binary-search sorted range starts.
+
+Complexity:
+    O(N log N) preprocessing, O(log N) query time, and O(N) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 import ipaddress
 
 class IPToCountryMapper:
@@ -6,11 +22,13 @@ class IPToCountryMapper:
         Initializes the IP to Country mapping.
         :param ip_ranges: List of tuples (start_ip, end_ip, country)
         """
-        self.ranges = [(int(ipaddress.IPv4Address(start)), int(ipaddress.IPv4Address(end)), country) 
+        self.ranges = [(int(ipaddress.IPv4Address(start)), 
+            int(ipaddress.IPv4Address(end)), country) 
                        for start, end, country in ip_ranges]
         # Sorting for efficient searching
         self.ranges.sort()
-
+        print(self.ranges)
+        
     def find_country(self, ip):
         """
         Finds the country for a given IP.

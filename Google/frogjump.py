@@ -1,3 +1,19 @@
+"""Find minimum alternating-range jumps between two positions.
+
+Question:
+    Find minimum alternating-range jumps between two positions.
+
+Approach:
+    Breadth-first search positions reachable by the permitted jump lengths.
+
+Complexity:
+    O(N*(L+R)) worst-case time and O(N) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 
 # Question is about a frog which can go left or right with with maximum possible 
 # step be l for left and r for right, 

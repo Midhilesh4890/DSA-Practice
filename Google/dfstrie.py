@@ -1,3 +1,19 @@
+"""Split a string into all sentences made from dictionary words.
+
+Question:
+    Split a string into all sentences made from dictionary words.
+
+Approach:
+    A trie guides depth-first search over valid word boundaries.
+
+Complexity:
+    O(2^N*N) output-sensitive time and O(N+D) space excluding output.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 from typing import List, Dict
 
 class TrieNode:

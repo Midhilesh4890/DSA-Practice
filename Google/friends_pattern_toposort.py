@@ -1,3 +1,19 @@
+"""Detect contradictory relative orderings across sequences.
+
+Question:
+    Detect contradictory relative orderings across sequences.
+
+Approach:
+    Build precedence edges and use Kahn's topological sort to detect cycles.
+
+Complexity:
+    O(V+E) time and O(V+E) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # You and your friends discuss a pattern of number your teacher has written on blackboard after class. 
 # 
 #Return false if there is any contradiction between you and your friends, in sequencing of numbers, else return true.

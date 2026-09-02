@@ -1,3 +1,19 @@
+"""Find adjacent swaps needed to transform one ordering into another.
+
+Question:
+    Find adjacent swaps needed to transform one ordering into another.
+
+Approach:
+    Map items to destination positions and count inversions with merge sort.
+
+Complexity:
+    O(N log N) time and O(N) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # Given two lists of Strings with the same set of elements and no duplicates within the list, find out the minimum number of contiguous swaps that are required to get from one list to another.
 # Example S = [B,C,A,D] and D = [C,D,A,B]
 

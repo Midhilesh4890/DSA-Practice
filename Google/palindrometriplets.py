@@ -1,3 +1,19 @@
+"""Count length-three palindromic subsequences.
+
+Question:
+    Count length-three palindromic subsequences.
+
+Approach:
+    Use prefix/suffix character counts around each middle position.
+
+Complexity:
+    O(N*A) time and O(A) space for alphabet size A.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # question: palindromic triples
 # given a string S , 3 palindromes (start(i),end(j)) such that i1<=j1<i2<=j2<i3<=j3 .
 # return how many such palindromic triples present.

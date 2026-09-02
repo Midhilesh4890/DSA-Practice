@@ -1,7 +1,24 @@
+"""Build the largest number whose digit costs fit a budget.
+
+Question:
+    Build the largest number whose digit costs fit a budget.
+
+Approach:
+    Unbounded knapsack maximizes digit count, then reconstructs greedily by digit.
+
+Complexity:
+    O(10*B) time and O(B) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 def max_number_with_cost(cost, budget):
     # Find the minimum cost and its corresponding digit
     min_cost = min(cost)
-    min_digit = cost.index(min_cost) + 1  # Digit corresponding to min cost
+    # On equal cost, the larger digit gives a lexicographically larger number.
+    min_digit = max(index + 1 for index, value in enumerate(cost) if value == min_cost)
 
     # Maximum length we can afford with the minimum cost digit
     max_length = budget // min_cost

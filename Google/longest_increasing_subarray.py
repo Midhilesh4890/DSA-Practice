@@ -1,3 +1,19 @@
+"""Find the longest increasing contiguous run after at most one change.
+
+Question:
+    Find the longest increasing contiguous run after at most one change.
+
+Approach:
+    Combine increasing prefix/suffix lengths around each possible changed index.
+
+Complexity:
+    O(N) time and O(N) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # Given an array of size N, find the maximum length of non-decreasing subarray:
 # [0 7 3 10 2 4 6 8 0 9 -20 4]
 # ans = 4, [2 4 6 8]

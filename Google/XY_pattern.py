@@ -1,3 +1,19 @@
+"""Resolve recursively referenced placeholders in a string.
+
+Question:
+    Resolve recursively referenced placeholders in a string.
+
+Approach:
+    Topologically order placeholder dependencies and substitute resolved values.
+
+Complexity:
+    O(V+E+L) time and O(V+E+L) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 from typing import Dict, List, Deque
 from collections import deque
 

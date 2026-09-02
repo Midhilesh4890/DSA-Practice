@@ -1,3 +1,19 @@
+"""Find the shortest grid walk from S to E that visits every burger.
+
+Question:
+    Find the shortest grid walk from S to E that visits every burger.
+
+Approach:
+    BFS computes pair distances; bitmask dynamic programming orders burger visits.
+
+Complexity:
+    O(K*R*C + 2^K*K^2) time and O(R*C + 2^K*K) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # Given a NxN grid. Given a character 'S' (start point), character 'E' (end point), a character 'B' (Burger), and a character 'O' (Empty road). There is a person who wants to start from the starting point and wants to reach the ending point by consuming all the burgers. You need to return the minimum distance the person has to cover from start to end point by eating all the burgers. The person can travel either top, down, right, or left. Diagonal movement is not allowed. Also, the person can only reach the end point after consuming all the burgers.
 
 

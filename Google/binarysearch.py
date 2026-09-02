@@ -1,3 +1,19 @@
+"""Find the largest cap whose truncated array sum does not exceed a limit.
+
+Question:
+    Find the largest cap whose truncated array sum does not exceed a limit.
+
+Approach:
+    Binary-search the cap and evaluate each candidate by a linear sum.
+
+Complexity:
+    O(N log M) time and O(1) auxiliary space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # There is a fixed size array of integers. And we are given a number S.
 # We need to pick a number x from integers (doesn't have to be in the array) 
 # and truncate each array integer to largest optimal number such that 

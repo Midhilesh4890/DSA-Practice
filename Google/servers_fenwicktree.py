@@ -1,3 +1,19 @@
+"""Count servers meeting coordinate constraints for each request.
+
+Question:
+    Count servers meeting coordinate constraints for each request.
+
+Approach:
+    Sort offline events and query compressed coordinates with a Fenwick tree.
+
+Complexity:
+    O((S+Q) log(S+Q)) time and O(S+Q) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 from bisect import bisect_left
 from collections import defaultdict
 

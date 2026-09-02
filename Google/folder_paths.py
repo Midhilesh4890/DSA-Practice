@@ -1,3 +1,19 @@
+"""Compress selected file paths into the fewest parent paths.
+
+Question:
+    Compress selected file paths into the fewest parent paths.
+
+Approach:
+    Store paths in a trie, mark selections, and emit fully selected subtrees.
+
+Complexity:
+    O(P) time and O(P) space for P total path components.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # Basically I needed to implement cli.
 
 

@@ -1,3 +1,19 @@
+"""Evaluate a numeric expression without Python eval.
+
+Question:
+    Evaluate a numeric expression without Python eval.
+
+Approach:
+    Parse numbers/operators with stacks while respecting precedence and parentheses.
+
+Complexity:
+    O(N) time and O(N) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # Calculator to do add, sub, divide, modulus, multiply and power operations
 # add(5, sub(pow(7, 2), mul(3, 2)))
 

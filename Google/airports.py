@@ -1,3 +1,19 @@
+"""Decide whether time-ordered flights can deliver a package.
+
+Question:
+    Decide whether time-ordered flights can deliver a package.
+
+Approach:
+    Relax flights from the earliest reachable airport using a priority queue.
+
+Complexity:
+    O((V+E) log V) time and O(V+E) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 from collections import defaultdict
 import heapq
 

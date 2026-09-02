@@ -1,3 +1,19 @@
+"""Assign volunteers to questions to maximize valid matches.
+
+Question:
+    Assign volunteers to questions to maximize valid matches.
+
+Approach:
+    Run augmenting-path bipartite matching over qualification edges.
+
+Complexity:
+    O(V*E) time and O(V+E) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # def find_maximum_matching(questions, volunteers):
 #     # Step 1: Construct the bipartite graph
 #     # Each question maps to a list of volunteers who share at least one tag

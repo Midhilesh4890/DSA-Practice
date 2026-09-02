@@ -1,3 +1,19 @@
+"""Determine the player with the largest solid rectangle on a board.
+
+Question:
+    Determine the player with the largest solid rectangle on a board.
+
+Approach:
+    Convert each row into histogram heights and use a monotonic stack.
+
+Complexity:
+    O(R*C) time and O(C) space.
+
+Tests:
+    Run this module for its examples and ``python Google/run_all_tests.py``
+    from the repository root for the complete isolated test pass.
+"""
+
 # Three players, A, B, and C play an online game. 
 # The game consists of a map in the shape of an RxC grid.
 # Each player has to capture one or more cells in the RxC grid. 
