@@ -1,39 +1,47 @@
-# Do let me know , if you have seen this question before and how would you solve this and what could be most optimised solution tc and sc for same.
+"""Sort and deduplicate the item numbers inside every section.
 
+Question:
+    Given a list of integer sections, return the same number of sections with
+    each section sorted in ascending order and duplicate values removed.
+    Values must lie in ``[0, max_value]``.
 
-# I was able to code with tc: O(mn + nlogn) and sc: O(mn)
-# I'm not sure if any other more optimised solution exists.
+Approach:
+    A reusable counting array marks values present in each section, after which
+    a linear scan emits them in order.
 
-
-# You are given a list of items grouped into sections, each of equal size. The first input is a 2D array where each sub-array represents a section with the item numbers. For example, {{2, 2, 6}, {1, 3, 4}, {2, 3, 4}}.
-
-
-# You need to reorganize the items such that each section has the item numbers in ascending order, with no repeated item numbers within a section. The structure must be preserved, meaning the number of sections and the number of items per section should remain unchanged.
+Complexity:
+    O(I + S*M) time and O(M) auxiliary space, where I is the number of input
+    items, S is the number of sections, and M is ``max_value + 1``.
+"""
 
 
 def counting_sort_deduplicate(sections, max_value):
+    """Return independently sorted, duplicate-free sections."""
+    if max_value < 0:
+        raise ValueError("max_value cannot be negative")
+
     result = []
-    
     for section in sections:
-        seen = [False] * (max_value + 1)  # Boolean array for seen numbers
-        sorted_section = []
-        
-        # Mark seen numbers
-        for num in section:
-            if not seen[num]:
-                seen[num] = True
-        
-        # Append numbers in sorted order
-        for num in range(max_value + 1):
-            if seen[num]:
-                sorted_section.append(num)
-        
-        result.append(sorted_section)
-    
+        present = [False] * (max_value + 1)
+        for value in section:
+            if not 0 <= value <= max_value:
+                raise ValueError("section value is outside the declared range")
+            present[value] = True
+        result.append([value for value, exists in enumerate(present) if exists])
     return result
 
-# Example Usage:
-sections = [[2, 2, 6], [1, 3, 4], [2, 3, 4]]
-max_value = max(max(sublist) for sublist in sections)  # Get max value in input
-result = counting_sort_deduplicate(sections, max_value)
-print(result)  # Output: [[2, 6], [1, 3, 4], [2, 3, 4]]
+
+def _run_tests():
+    sections = [[2, 2, 6], [1, 3, 4], [2, 3, 4]]
+    assert counting_sort_deduplicate(sections, 6) == [
+        [2, 6],
+        [1, 3, 4],
+        [2, 3, 4],
+    ]
+    assert counting_sort_deduplicate([], 0) == []
+    assert counting_sort_deduplicate([[]], 0) == [[]]
+
+
+if __name__ == "__main__":
+    _run_tests()
+    print("All tests passed.")
