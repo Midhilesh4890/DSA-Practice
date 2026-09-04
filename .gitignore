@@ -1,0 +1,43 @@
+# Competitive Programming Helper
+.cph/
+
+# Local input/output files
+inp.txt
+out.txt
+
+# C and C++ build artifacts
+*.exe
+*.o
+*.obj
+*.out
+*.a
+*.dll
+*.pdb
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Editor and IDE metadata
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.log
