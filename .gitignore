@@ -5,6 +5,10 @@
 inp.txt
 out.txt
 
+# Local scratch solution files
+/test.cpp
+/test.py
+
 # C and C++ build artifacts
 *.exe
 *.o
