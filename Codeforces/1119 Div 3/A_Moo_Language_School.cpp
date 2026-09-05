@@ -14,10 +14,8 @@ using vpii = vector<pii>;
 using vpll = vector<pll>;
 
 const ll INF = (ll)4e18;
-const int MOD1 = 998244353;
-const int MOD2 = 1000000007;
-const int INV1 = (MOD1 + 1) / 2;
-const int INV2 = (MOD2 + 1) / 2;
+const int MOD = 998244353;
+const int INV2 = (MOD + 1) / 2;
 
 #define all(v) (v).begin(), (v).end()
 #define rall(v) (v).rbegin(), (v).rend()
@@ -33,14 +31,31 @@ const int INV2 = (MOD2 + 1) / 2;
 #define rrep(i, a, b) for (int i = (a); i >= (b); i--)
 
 void solve() {
+    int n, k;
+    string s;
+    cin >> n >> k >> s;
 
+    int res = 0;
+    for (int i = 0; i < n; i += k) {
+        bool flag = true;
+        for (int j = i; j < i + k; ++j) {
+            if (s[j] == '0') {
+                flag = false;
+                break;
+            }
+        }
+        if (flag) ++res;
+    }
+    cout << res << '\n';
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    solve();
+    int t;
+    cin >> t;
+    while (t--) solve();
 
     return 0;
 }

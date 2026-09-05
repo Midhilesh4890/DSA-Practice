@@ -33,14 +33,49 @@ const int INV2 = (MOD2 + 1) / 2;
 #define rrep(i, a, b) for (int i = (a); i >= (b); i--)
 
 void solve() {
+    int n;
+    cin >> n;
+    vi cnt;
+    int ones = 0;
+    ll res = 0;
+    rep(i, 0, n) {
+        int x;
+        cin >> x;
+        if (x == 1) {
+            ++ones;
+        } else if (ones > 0) {
+            cnt.pb(ones);
+            res += ones;
+        }
+    }
 
+    string s;
+    cin >> s;
+    int l = 0, d = 0, m = sz(cnt);
+    cout << res;
+    for (char ch : s) {
+        if (l < m) {
+            if (ch == '1') {
+                res -= m - l;
+                ++d;
+                while (l < m && cnt[l] <= d) ++l;
+            } else {
+                res -= cnt[m - 1] - d;
+                --m;
+            }
+        }
+        cout << ' ' << res;
+    }
+    cout << '\n';
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    solve();
+    int t;
+    cin >> t;
+    while (t--) solve();
 
     return 0;
 }
