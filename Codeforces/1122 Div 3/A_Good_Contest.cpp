@@ -45,14 +45,18 @@ ll modpow(ll a, ll e, ll mod) {
 }
 
 void solve() {
-
+    int n, a1, a2, a3;
+    cin >> n >> a1 >> a2 >> a3;
+    cout << n - min({a1, a2, a3}) << '\n';
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    solve();
+    int t;
+    cin >> t;
+    while (t--) solve();
 
     return 0;
 }

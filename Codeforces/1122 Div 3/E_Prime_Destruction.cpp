@@ -45,14 +45,41 @@ ll modpow(ll a, ll e, ll mod) {
 }
 
 void solve() {
+    int n, k;
+    cin >> n >> k;
+    vi a(n), spf(n + 1);
+    for (int &x : a) cin >> x;
 
+    for (int p = 2; p <= n; p++) {
+        if (spf[p] != 0) continue;
+        for (int x = p; x <= n; x += p) {
+            if (spf[x] == 0) spf[x] = p;
+        }
+    }
+
+    vll dp(n + 1, 0);
+    for (int x = k + 1; x <= n; x++) {
+        dp[x] = INF;
+        int rem = x;
+        while (rem > 1) {
+            int p = spf[rem];
+            dp[x] = min(dp[x], 1 + p * dp[x / p]);
+            while (rem % p == 0) rem /= p;
+        }
+    }
+
+    ll res = 0;
+    for (int x : a) res += dp[x];
+    cout << res << '\n';
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    solve();
+    int t;
+    cin >> t;
+    while (t--) solve();
 
     return 0;
 }

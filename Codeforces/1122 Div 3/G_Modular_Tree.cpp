@@ -45,14 +45,66 @@ ll modpow(ll a, ll e, ll mod) {
 }
 
 void solve() {
+    int n;
+    cin >> n;
 
+    vll a(n), b(n);
+    for (auto &x : a) cin >> x;
+    for (auto &x : b) cin >> x;
+
+    vector<vi> adj(n);
+    rep(i, 0, n - 1) {
+        int u, v;
+        cin >> u >> v;
+        u--;
+        v--;
+        adj[u].pb(v);
+        adj[v].pb(u);
+    }
+
+    vi parent(n, -1), order;
+    order.reserve(n);
+    parent[0] = 0;
+    order.pb(0);
+
+    rep(i, 0, n) {
+        int u = order[i];
+        for (int v : adj[u]) {
+            if (v == parent[u]) continue;
+            parent[v] = u;
+            order.pb(v);
+        }
+    }
+
+    vll diff(n);
+    ll res = 0;
+
+    rrep(i, n - 1, 0) {
+        int u = order[i];
+        ll sum = 0;
+        ll g = b[u];
+
+        for (int v : adj[u]) {
+            if (parent[v] != u) continue;
+            sum += a[v];
+            g = gcd(g, diff[v]);
+        }
+
+        g = gcd(g, sum);
+        res += b[u] - g + a[u] % g;
+        diff[u] = (g < b[u] ? g : 0);
+    }
+
+    cout << res << '\n';
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    solve();
+    int t;
+    cin >> t;
+    while (t--) solve();
 
     return 0;
 }

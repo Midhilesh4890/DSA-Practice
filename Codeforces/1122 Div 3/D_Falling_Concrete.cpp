@@ -45,14 +45,33 @@ ll modpow(ll a, ll e, ll mod) {
 }
 
 void solve() {
+    int n;
+    cin >> n;
+    vi a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+        a[i] -= i;
+    }
 
+    sort(all(a));
+    a.erase(unique(all(a)), a.end());
+
+    int res = 1, l = 1;
+    for (int i = 1; i < sz(a); i++) {
+        if (a[i] == a[i - 1] + 1) l++;
+        else l = 1;
+        res = max(res, l);
+    }
+    cout << res << '\n';
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    solve();
+    int t;
+    cin >> t;
+    while (t--) solve();
 
     return 0;
 }

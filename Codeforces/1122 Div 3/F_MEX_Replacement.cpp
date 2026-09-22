@@ -44,15 +44,55 @@ ll modpow(ll a, ll e, ll mod) {
     return res;
 }
 
-void solve() {
+bool check(ll target, const vpll &a, ll total) {
+    ll req = 1, rem = 0, prev = target;
+    for (int i = sz(a) - 1; i >= 0; i--) {
+        ll x = a[i].fi, y = a[i].se;
+        ll diff = prev - x - 1;
+        while (diff > 0) {
+            req *= 2;
+            if (req > total) return false;
+            diff--;
+        }
+        if (x == 0) return req <= y + rem;
+        if (y < req) req += req - y;
+        else rem += y - req;
+        if (req > total) return false;
+        prev = x;
+    }
+    return false;
+}
 
+void solve() {
+    int n;
+    cin >> n;
+    vpll a(n);
+    ll total = 0;
+    for (int i = 0; i < n; i++) {
+        cin >> a[i].fi >> a[i].se;
+        total += a[i].se;
+    }
+    sort(all(a));
+    if (a[0].fi != 0) a.insert(a.begin(), {0, 0});
+
+    ll res = a.back().fi;
+    ll h = res + 1;
+    for (ll cnt = total; cnt > 0; cnt /= 2) h++;
+    while (res + 1 < h) {
+        ll m = res + (h - res) / 2;
+        if (check(m, a, total)) res = m;
+        else h = m;
+    }
+    cout << res << '\n';
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    solve();
+    int t;
+    cin >> t;
+    while (t--) solve();
 
     return 0;
 }

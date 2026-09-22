@@ -45,7 +45,32 @@ ll modpow(ll a, ll e, ll mod) {
 }
 
 void solve() {
+    int n, m;
+    ll k, x, y;
+    cin >> n >> m >> k;
+    cin >> x >> y;
 
+    vll a(n), b(m), pre(n + 1);
+    for (auto& c : a) cin >> c;
+    for (auto& c : b) cin >> c;
+    sort(all(a));
+    sort(all(b));
+
+    rep(i, 0, n) pre[i + 1] = pre[i] + a[i];
+
+    ll total = x + y * k, notes = 0;
+    int p = n, res = 0;
+    rep(j, 0, m + 1) {
+        if (j > 0) {
+            notes += (b[j - 1] + k - 1) / k;
+            total -= b[j - 1];
+        }
+        if (notes > y) break;
+        while (p > 0 && pre[p] > total) p--;
+        res = max(res, p + j);
+    }
+
+    cout << res << '\n';
 }
 
 int main() {

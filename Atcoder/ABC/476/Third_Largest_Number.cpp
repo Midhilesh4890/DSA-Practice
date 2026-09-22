@@ -45,7 +45,19 @@ ll modpow(ll a, ll e, ll mod) {
 }
 
 void solve() {
+    int N;
+    cin >> N;
 
+    priority_queue<int, vector<int>, greater<int>> pq;
+    rep(i, 0, N) {
+        int x;
+        cin >> x;
+        pq.push(x);
+        if (sz(pq) > 3) pq.pop();
+        if (i >= 2) {
+            cout << pq.top() << "\n";
+        }
+    }
 }
 
 int main() {

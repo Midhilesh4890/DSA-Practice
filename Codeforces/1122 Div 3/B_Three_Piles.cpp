@@ -45,14 +45,18 @@ ll modpow(ll a, ll e, ll mod) {
 }
 
 void solve() {
-
+    ll a, b, c;
+    cin >> a >> b >> c;
+    cout << max(b - a, a + c - b) << '\n';
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    solve();
+    int t;
+    cin >> t;
+    while (t--) solve();
 
     return 0;
 }

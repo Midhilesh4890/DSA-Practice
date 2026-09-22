@@ -45,14 +45,32 @@ ll modpow(ll a, ll e, ll mod) {
 }
 
 void solve() {
+    int n;
+    string s;
+    cin >> n >> s;
 
+    int z = count(all(s), '0');
+    if (s[0] == '1') {
+        cout << z << '\n';
+        return;
+    }
+
+    int o = 0, res = n;
+    for (char bit : s) {
+        if (bit == '0') z--;
+        else o++;
+        res = min(res, o + z);
+    }
+    cout << res << '\n';
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    solve();
+    int t;
+    cin >> t;
+    while (t--) solve();
 
     return 0;
 }
